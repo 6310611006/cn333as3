@@ -1,6 +1,4 @@
-package com.example.multi_game.ui
-
-
+package com.example.multi_game.ui.quizgame
 
 
 val questionBank = listOf(

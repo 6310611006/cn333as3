@@ -1,17 +1,21 @@
 package com.example.multi_game.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.multi_game.R
 
 
 @Composable
-fun MainScreen(navController: NavHostController) {
+fun MainScreen(onPlayAgain: () -> Unit,navController: NavHostController) {
     Column(
 
         modifier = Modifier.padding(100.dp),
@@ -19,8 +23,12 @@ fun MainScreen(navController: NavHostController) {
         //verticalArrangement = Arrangement.CenterVertically,
         verticalArrangement = Arrangement.spacedBy(18.dp),
     ) {
+        Image(
 
-        Spacer(modifier = Modifier.height(300.dp))
+            painter = painterResource(id = R.drawable.multiprofile),
+            contentDescription = stringResource(id = R.string.cat_content_description)
+        )
+        Spacer(modifier = Modifier.height(16.dp))
         Button(
 
             onClick = { navController.navigate("number_guessing_game_screen") },
@@ -29,12 +37,13 @@ fun MainScreen(navController: NavHostController) {
 
         Button(
 
-            onClick = { navController.navigate("math_challenge_game_screen") },
+            onClick = { navController.navigate("math_problem_game_screen") },
             content = { Text("Math Challenge Game") }
         )
 
         Button(
-            onClick = { navController.navigate("quiz_game_screen") },
+            onClick = { onPlayAgain()
+                navController.navigate("quizScreen") },
             content = { Text("Quiz Game") }
         )
     }

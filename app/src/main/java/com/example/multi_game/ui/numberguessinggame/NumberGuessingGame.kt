@@ -1,16 +1,9 @@
-package com.example.multi_game.ui
+package com.example.multi_game.ui.numberguessinggame
 
+import androidx.compose.foundation.layout.*
 import androidx.navigation.NavHostController
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,15 +30,7 @@ fun NumberGuessingGame(navController: NavHostController) {
     var count by remember { mutableStateOf(0) }
 
 
-    Column {
-        TopAppBar(
-            title = { Text(text = "Math Game") },
-            navigationIcon = {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = "Back to home screen")
-                }
-            }
-        )
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -90,23 +75,33 @@ fun NumberGuessingGame(navController: NavHostController) {
                 } else {
                     message = "Please enter a valid number."
                 }
-            }) {
-                Text(text = "Guess")
-            }
-            Button(onClick = {
-                guess = ""
-                message = "Guess a number between 1 and 100"
-                answer = Random.nextInt(1, 101)
-                count = 0
-                focusRequester.requestFocus()
-            }) {
-                Text(text = "Reset")
-            }
+            })
+                {
+                    Text(text = "Guess")
+                }
+            Row() {
+                Button(onClick = {
+                    guess = ""
+                    message = "Guess a number between 1 and 100"
+                    answer = Random.nextInt(1, 101)
+                    count = 0
+                    focusRequester.requestFocus()
+                }) {
+                    Text(text = "Reset")
+                }
+                Spacer(Modifier.width(10.dp))
+                Button(
+                    onClick = { navController.navigate("main_screen") },
+                )
+                {
+                    Text(
+                        text = "Cancel",
 
+                    )
+                }
+            }
         }
     }
-}
-
 
 
 

@@ -1,4 +1,4 @@
-package com.example.multi_game.ui
+package com.example.multi_game.ui.quizgame
 
 data class Question(
     val question: String,

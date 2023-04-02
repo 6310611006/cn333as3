@@ -4,4 +4,9 @@
     <string name="question_count">%d of 10 question</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
+    <string name="Game1">NumberGuessingGame</string>
+    <string name="Game2">MathProblemGame</string>
+    <string name="Game3">QuizGame</string>
+    <string name="back">Home</string>
+    <string name="cat_content_description">multigameprofile</string>
 </resources>

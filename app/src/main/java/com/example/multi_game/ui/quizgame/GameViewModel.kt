@@ -1,4 +1,4 @@
-package com.example.multi_game.ui
+package com.example.multi_game.ui.quizgame
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
