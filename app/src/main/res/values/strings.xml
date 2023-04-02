@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multi-Game</string>
+    <string name="party_content_description">gameanimal</string>
+    <string name="question_count">%d of 10 question</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+</resources>
