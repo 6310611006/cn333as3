@@ -31,13 +31,13 @@ fun MainScreen(onPlayAgain: () -> Unit,navController: NavHostController) {
         Spacer(modifier = Modifier.height(16.dp))
         Button(
 
-            onClick = { navController.navigate("number_guessing_game_screen") },
+            onClick = { navController.navigate("NumberGuessingGameScreen") },
             content = { Text("Number Guessing Game") }
         )
 
         Button(
 
-            onClick = { navController.navigate("math_problem_game_screen") },
+            onClick = { navController.navigate("MathProblemGameScreen") },
             content = { Text("Math Challenge Game") }
         )
 

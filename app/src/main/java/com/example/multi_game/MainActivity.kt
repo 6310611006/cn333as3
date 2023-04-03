@@ -37,7 +37,6 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             MultiGameTheme {
 
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -101,10 +100,10 @@ class MainActivity : ComponentActivity() {
                                         })
                                 }
 
-                                composable("math_problem_game_screen") {
+                                composable("MathProblemGameScreen") {
                                     MathGameApp(navController)
                                 }
-                                composable("number_guessing_game_screen") {
+                                composable("NumberGuessingGameScreen") {
 
                                     NumberGuessingGame(navController)
                                 }
